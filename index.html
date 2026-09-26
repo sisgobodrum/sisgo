@@ -1,116 +1,393 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Restaurant Menu</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şişgo Bodrum Ocakbaşı - Menu</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!--<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="turn.min.js"></script>
+  -->
+
+  <style>
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #F7F3ED;
+  color: #32FF1A;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.5;
+}
+
+.menu {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 25px;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.menu-header h1 {
+  font-size: 52px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.menu-item h3 {
+  color: black;
+}
+
+.menu-header p {
+  color: #8b6f47;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.menu-section {
+  margin-bottom: 45px;
+}
+
+.menu-section h2 {
+  color: black;
+  font-size: 25px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 1px solid #cfc4b5;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 20px 0;
+  border-bottom: 1px dotted #d4cbc0;
+}
+
+.menu-item h3 {
+  font-size: 19px;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.menu-item p {
+  color: gray;
+  font-size: 14px;
+  max-width: 600px;
+}
+
+.price {
+  color: #32FF1A;
+  font-size: 18px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .menu {
+    padding: 40px 20px;
+  }
+
+  .menu-header {
+    margin-bottom: 40px;
+  }
+
+  .menu-header h1 {
+    font-size: 40px;
+  }
+
+  .menu-section h2 {
+    font-size: 20px;
+  }
+
+  .menu-item {
+    gap: 15px;
+  }
+
+  .menu-item h3 {
+    font-size: 17px;
+  }
+
+  .menu-item p {
+    font-size: 13px;
+  }
+}
+  
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <p class="eyebrow">Welcome to</p>
-      <h1>Olive & Ember</h1>
-      <p class="subtitle">Fresh flavors, seasonal plates, and a warm dining experience.</p>
-    </div>
-  </header>
 
-  <main class="container">
+<!--
+Kebaplar
+
+    Kuşbaşı Porsiyon 260Gr – 710 TL
+    Löp Porsiyon 260Gr – 760 TL
+    Alinazik Kuşbaşı 280Gr – 730 TL
+    Et Pirzola 350Gr – 680 TL
+    Urfa Porsiyon 240Gr – 660 TL
+    Patlıcan Kebabı 280Gr – 660 TL
+    Tavuk Şiş – 460 TL
+    Kanat Porsiyon 300Gr – 500 TL
+    Küşleme Porsiyon 260Gr – 710 TL
+    Karışık Kebap 2 Kişilik – 1.750 TL
+    Kavurma Porsiyon 300Gr – 300 TL
+    Ciğer Porsiyon 320Gr – 620 TL
+    Sarma Beyti 170Gr – 680 TL
+    Kiremitte Kuşbaşı Kapama 320Gr – 740 TL
+    Ali Nazik Kıyma 240Gr – 680 TL
+    Adana Porsiyon 240Gr – 660 TL
+    Yürek Porsiyon 320Gr – 620 TL
+    Haşhaş Kebabı Porsiyon 240Gr – 660 TL
+    Tava Küşleme 260Gr – 720 TL
+    Altı Ezmeli 240Gr – 680 TL
+    Altı Ezmeli Kuşbaşı Porsiyon 280Gr – 745 TL
+    Altı Ezmeli Karışık Porsiyon 250Gr – 690 TL
+    Bülbül Porsiyon 280Gr – 700 TL
+    Tavuk Sarma Porsiyon 320Gr – 450 TL
+    Domates Kebabı 200Gr – 680 TL
+    Maraş Taraklık 260Gr – 660 TL
+    Yağlı Kara Porsiyon 300Gr – 740 TL
+    Kara Kavurma – 710 TL
+
+Çorbalar
+
+    Beyran – 300 TL
+    Mercimek Çorbası – 140 TL
+    Et Paça Special – 300 TL
+
+Pide ve Lahmacunlar
+
+    Çıtır Lahmacun – 170 TL
+    Karışık Pide – 485 TL
+    Kıymalı Kaşarlı Pide – 460 TL
+    Kaşarlı Pide – 385 TL
+    Kuşbaşı Kaşarlı Pide – 510 TL
+    Kıymalı Pide – 435 TL
+    Kuşbaşı Pide – 485 TL
+
+Ara Sıcaklar
+
+    İçli Köfte Adet – 85 TL
+    Fındık Lahmacun – 85 TL
+    Çiğ Köfte Porsiyon – 200 TL
+    Patates Kızartması Porsiyon – 130 TL
+
+Tatlılar
+
+    Özel Künefe – 175 TL
+    Katmer – 600 TL
+    Yaprak Şöbiyet Porsiyon – 375 TL
+    Mekik Baklava – 360 TL
+    Özel Şöbiyet – 460 TL
+    Antep Özeli Porsiyon – 390 TL
+    Havuç Dilimi Baklava – 210 TL
+    Midye Baklava – 380 TL
+    Bohça Porsiyon – 330 TL
+    Dolama Baklava – 500 TL
+    3 Dilim Karışık – 340 TL
+    4 Dilim Karışık – 420 TL
+    Kavrulmuş Fıstık – 160 TL
+
+İçecekler
+
+    Küçük Su – 20 TL
+    Sade Soda – 35 TL
+    Kola – 65 TL
+    Şalgam – 65 TL
+    Fuse Tea – 65 TL
+    Fanta – 65 TL
+    Kapalı Ayran – 50 TL
+    Açık Ayran – 50 TL
+    Türk Kahvesi – 70 TL
+    Çay – İkram
+
+-->
+
+  <main class="menu">
+    <header class="menu-header">
+      <h1>Şişgo Bodrum Ocakbaşı</h1>
+      <p>Menü</p>
+    </header>
+
     <section class="menu-section">
-      <div class="section-heading">
+      <h2>Ara Sıcaklar</h2>
+
+      <div class="menu-item">
         <div>
-          <p class="section-label">Starters</p>
-          <h2>Appetizers</h2>
+          <h3>İçli Köfte Adet</h3>
+          <p>icindekiler</p>
         </div>
-        <p class="section-description">Perfect bites to begin your meal.</p>
+        <span class="price">999₺</span>
       </div>
-      <div class="menu-grid">
-        <article class="menu-item">
-          <div>
-            <h3>Roasted Red Pepper Hummus</h3>
-            <p>Served with warm pita, olive oil, and za'atar.</p>
-          </div>
-          <span>$9</span>
-        </article>
-        <article class="menu-item">
-          <div>
-            <h3>Garlic-Parmesan Brussels</h3>
-            <p>Crispy brussels sprouts tossed in garlic butter.</p>
-          </div>
-          <span>$10</span>
-        </article>
-        <article class="menu-item">
-          <div>
-            <h3>Crispy Calamari</h3>
-            <p>Lightly breaded calamari with lemon aioli.</p>
-          </div>
-          <span>$13</span>
-        </article>
+
+      <div class="menu-item">
+        <div>
+          <h3>Fındık Lahmacun</h3>
+          <p>icindekiler</p>
+        </div>
+        <span class="price">999₺</span>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <h3>Çiğ Köfte Porsiyon</h3>
+          <p>icindekiler</p>
+        </div>
+        <span class="price">999₺</span>
       </div>
     </section>
 
     <section class="menu-section">
-      <div class="section-heading">
+      <h2>Kebaplar</h2>
+
+      <div class="menu-item">
         <div>
-          <p class="section-label">Mains</p>
-          <h2>Entrées</h2>
+          <h3>Adana</h3>
+          <p>icindekiler</p>
         </div>
-        <p class="section-description">Hearty plates inspired by fresh ingredients.</p>
+        <span class="price">999₺</span>
       </div>
-      <div class="menu-grid">
-        <article class="menu-item">
-          <div>
-            <h3>Herb-Crusted Salmon</h3>
-            <p>Pan-seared salmon with lemon butter and market vegetables.</p>
-          </div>
-          <span>$24</span>
-        </article>
-        <article class="menu-item">
-          <div>
-            <h3>Grilled Chicken & Quinoa</h3>
-            <p>Marinated chicken breast with quinoa salad and greens.</p>
-          </div>
-          <span>$21</span>
-        </article>
-        <article class="menu-item">
-          <div>
-            <h3>Spiced Mushroom Risotto</h3>
-            <p>Creamy arborio rice with seasonal mushrooms and parmesan.</p>
-          </div>
-          <span>$19</span>
-        </article>
+
+      <div class="menu-item">
+        <div>
+          <h3>Urfa</h3>
+          <p>icindekiler</p>
+        </div>
+        <span class="price">999₺</span>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <h3>Tavuk Sis</h3>
+          <p>icindekiler</p>
+        </div>
+        <span class="price">999₺</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <h3>Beyti</h3>
+          <p>icindekiler</p>
+        </div>
+        <span class="price">999₺</span>
       </div>
     </section>
 
     <section class="menu-section">
-      <div class="section-heading">
+      <h2>Lahmacunlar</h2>
+
+      <div class="menu-item">
         <div>
-          <p class="section-label">Sweet Finish</p>
-          <h2>Desserts</h2>
+          <h3>Çıtır Lahmacun</h3>
+          <p>icindekiler</p>
         </div>
-        <p class="section-description">A sweet ending to your meal.</p>
+        <span class="price">999₺</span>
       </div>
-      <div class="menu-grid">
-        <article class="menu-item">
-          <div>
-            <h3>Vanilla Bean Panna Cotta</h3>
-            <p>Light cream dessert with berry compote.</p>
-          </div>
-          <span>$8</span>
-        </article>
-        <article class="menu-item">
-          <div>
-            <h3>Chocolate Olive Oil Cake</h3>
-            <p>Moist cake with a hint of citrus and whipped cream.</p>
-          </div>
-          <span>$9</span>
-        </article>
+
+    </section>
+    
+     <section class="menu-section">
+      <h2>Çorbalar</h2>
+
+      <div class="menu-item">
+        <div>
+          <h3>Mercimek Corbasi</h3>
+          <p>icindekiler</p>
+        </div>
+        <span class="price">999₺</span>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <h3>Beyran</h3>
+          <p>icindekiler</p>
+        </div>
+        <span class="price">999₺</span>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <h3>Paca</h3>
+          <p>icindekiler</p>
+        </div>
+        <span class="price">999₺</span>
       </div>
     </section>
+
+
+     <section class="menu-section">
+      <h2>Tatlılar</h2>
+
+      <div class="menu-item">
+        <div>
+          <h3>Baklava</h3>
+          <p>icindekiler</p>
+        </div>
+        <span class="price">999₺</span>
+      </div>
+
+    </section>
+
+
+     <section class="menu-section">
+      <h2>İçecekler</h2>
+
+      <div class="menu-item">
+        <div>
+          <h3>Su</h3>
+        </div>
+        <span class="price">999₺</span>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <h3>Maden Suyu</h3>
+        </div>
+        <span class="price">999₺</span>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <h3>Ayran</h3>
+        </div>
+        <span class="price">999₺</span>
+      </div>
+      
+       <div class="menu-item">
+        <div>
+          <h3>Ice Tea</h3>
+        </div>
+        <span class="price">999₺</span>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <h3>Kahve</h3>
+        </div>
+        <span class="price">999₺</span>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <h3>Cay</h3>
+        </div>
+        <span class="price">999₺</span>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer">
-    <p>Open daily from 11am to 10pm • 123 Market Street • (555) 024-1984</p>
-  </footer>
 </body>
 </html>
